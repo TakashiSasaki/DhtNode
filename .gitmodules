@@ -1,3 +1,6 @@
 [submodule "opendht"]
 	path = opendht
 	url = git@github.com:savoirfairelinux/opendht.git
+[submodule "msgpack-c"]
+	path = msgpack-c
+	url = git@github.com:msgpack/msgpack-c.git
