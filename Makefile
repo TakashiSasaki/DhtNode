@@ -25,6 +25,8 @@ build:
 build-msgpack:
 	(cd msgpack-c; cmake -DMSGPACK_CXX11=ON .)
 	(cd msgpack-c; make -j4)
+
+install-msgpack:
 	(cd msgpack-c; sudo make install)
 
 uninstall-msgpack:
