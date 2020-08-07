@@ -1,8 +1,23 @@
-.PHONY: apt-get
+.PHONY: apt-get install-http_parser
+.ONESHELL:
+
+http_parser-2.9.3.tar.gz:
+	wget -nd -nH https://github.com/binarytrails/http_parser/archive/v2.9.3.tar.gz -O $@
+
+http_parser-2.9.3: http_parser-2.9.3.tar.gz
+	tar zxvf $<
+
+install-http_parser: http_parser-2.9.3
+	cd $<
+	make uninstall
+	make
+	make test
+	make install
 
 apt-get:
 	apt-get update
 	apt-get upgrade -y
+	apt-get install -y wget
 	apt-get install -y binutils 
 	apt-get install -y cmake
 	apt-get install -y cython3

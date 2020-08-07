@@ -5,3 +5,5 @@ dpkg.log
 .viminfo
 .wget-hsts
 .gitconfig
+http_parser-2.9.3.tar.gz
+http_parser-2.9.3
