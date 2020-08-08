@@ -1,1 +1,14 @@
 *.swp
+.bashrc
+.lesshst
+.profile
+dpkg.log
+.viminfo
+.wget-hsts
+.gitconfig
+http_parser-2.9.3.tar.gz
+http_parser-2.9.3
+restinio-0.6.8.1-full.tar.bz2
+restinio-0.6.8.1/
+opendht/
+.ssh/
