@@ -1,0 +1,19 @@
+*** restinio-0.6.8.1/dev/CMakeLists.txt	2020-06-24 14:17:37.000000000 +0000
+--- restinio-0.6.8.1-build/dev/CMakeLists.txt	2020-08-07 16:21:56.648871388 +0000
+***************
+*** 23,29 ****
+  
+  # Since v.0.6.5 a user can force usage of already installed http-parser
+  # library.
+! option(RESTINIO_USE_EXTERNAL_HTTP_PARSER "Use already installed http-parser library" OFF)
+  
+  # Since v.0.6.7 a user can force usage of already installed nonstd
+  # libraries.
+--- 23,29 ----
+  
+  # Since v.0.6.5 a user can force usage of already installed http-parser
+  # library.
+! option(RESTINIO_USE_EXTERNAL_HTTP_PARSER "Use already installed http-parser library" ON)
+  
+  # Since v.0.6.7 a user can force usage of already installed nonstd
+  # libraries.
