@@ -1,13 +1,29 @@
-.PHONY: apt-get install-http_parser
+.PHONY: apt-get install-http_parser install-restinio
 .ONESHELL:
+
+restinio-0.6.8.1-full.tar.bz2:
+	wget -nd -nH https://github.com/Stiffstream/restinio/releases/download/v.0.6.8.1/restinio-0.6.8.1-full.tar.bz2
+
+restinio-0.6.8.1/: restinio-0.6.8.1-full.tar.bz2
+	tar jxvf $<
+
+install-restinio: restinio-0.6.8.1/
+	cd $</dev
+	patch -p1 < ../$<.patch
+	mkdir -p build
+	cd build
+	cmake ..
+	make
+	make test
+	make install
 
 http_parser-2.9.3.tar.gz:
 	wget -nd -nH https://github.com/binarytrails/http_parser/archive/v2.9.3.tar.gz -O $@
 
-http_parser-2.9.3: http_parser-2.9.3.tar.gz
+http_parser-2.9.3/: http_parser-2.9.3.tar.gz
 	tar zxvf $<
 
-install-http_parser: http_parser-2.9.3
+install-http_parser: http_parser-2.9.3/
 	cd $<
 	make uninstall
 	make
