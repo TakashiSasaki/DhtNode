@@ -1,0 +1,27 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7123468..228b577 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -19,16 +19,16 @@ option (OPENDHT_SYSTEMD "Install systemd module" OFF)
+ option (OPENDHT_ARGON2 "Use included argon2 sources" OFF)
+ option (OPENDHT_LTO "Build with LTO" OFF)
+ option (OPENDHT_SANITIZE "Build with address sanitizer and stack protector" OFF)
+-option (OPENDHT_PROXY_SERVER "Enable DHT proxy server, use Restinio and jsoncpp" OFF)
++option (OPENDHT_PROXY_SERVER "Enable DHT proxy server, use Restinio and jsoncpp" ON)
+ option (OPENDHT_PUSH_NOTIFICATIONS "Enable push notifications support" OFF)
+-option (OPENDHT_PROXY_SERVER_IDENTITY "Allow clients to use the node identity" OFF)
+-option (OPENDHT_PROXY_CLIENT "Enable DHT proxy client, use Restinio and jsoncpp" OFF)
++option (OPENDHT_PROXY_SERVER_IDENTITY "Allow clients to use the node identity" ON)
++option (OPENDHT_PROXY_CLIENT "Enable DHT proxy client, use Restinio and jsoncpp" ON)
+ option (OPENDHT_PROXY_OPENSSL "Build DHT proxy with OpenSSL" ON)
+-option (OPENDHT_PROXY_HTTP_PARSER_FORK "Build DHT proxy with custom http_parser to support old API" OFF)
+-CMAKE_DEPENDENT_OPTION(OPENDHT_HTTP "Build embedded http(s) client" OFF "NOT OPENDHT_PROXY_SERVER;NOT OPENDHT_PROXY_CLIENT" ON)
++option (OPENDHT_PROXY_HTTP_PARSER_FORK "Build DHT proxy with custom http_parser to support old API" ON)
++CMAKE_DEPENDENT_OPTION(OPENDHT_HTTP "Build embedded http(s) client" ON "NOT OPENDHT_PROXY_SERVER;NOT OPENDHT_PROXY_CLIENT" ON)
+ option (OPENDHT_PEER_DISCOVERY "Enable multicast peer discovery" ON)
+ option (OPENDHT_INDEX "Build DHT indexation feature" OFF)
+-option (OPENDHT_TESTS "Add unit tests executable" OFF)
++option (OPENDHT_TESTS "Add unit tests executable" ON)
+ option (OPENDHT_TESTS_NETWORK "Enable unit tests that require network access" ON)
+ option (OPENDHT_C "Build C bindings" OFF)
+ 
